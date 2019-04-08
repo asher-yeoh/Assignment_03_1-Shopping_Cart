@@ -90,10 +90,16 @@ export class AppComponent {
   }
 
   onSelected (i) {
-    this.product[i].selected =!this.product[i].selected
-    
-    // if (this.product[i].selected) {window.alert("selected")}
-    // else {window.alert("deselected")}
+    if (this.product[i].qty == 0){
+      windows.alert("Please select at least one(1) qty.")
+    }
+    else {
+      this.product[i].selected =!this.product[i].selected
+    }
+
+    if (this.product[i].selected === false) {
+      this.product[i].qty = 0
+    }
   }
 
   checkSelected(i): string {
