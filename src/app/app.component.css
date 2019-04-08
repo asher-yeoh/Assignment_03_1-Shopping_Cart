@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+@import url("https://fonts.googleapis.com/css?family=Advent Pro");
+
+/* :host {
+    font-family: Abel;
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    background-color: red;
+} */
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: whitesmoke;
+    border-radius: 12px;
+    /* margin: 10px; */
+    /* padding: 10px; */
+    border-style: outset;
+    border-color: whitesmoke;
+    text-align: center;
+    font-family: Abel;
+    font-weight: bold;
+    white-space: nowrap;
+    color: darkslategray;
+    outline: none;
+    cursor: pointer;
+}
+
+span {
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* table {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    border-style: dotted;
+    border-color: pink;
+} */
+
+.list-title {
+    background-color: #323538;
+    width: 100%;
+    height: 50px;
+    border-style: solid;
+    /* padding:0 10px; */
+    font-family: Abel;
+    font-size: xx-large;
+    white-space: nowrap;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 80px;
+    /* transform: rotate(90deg); */
+}
+
+ul {
+    width: 500px;
+    list-style-type: none;
+    padding: 5px 0;
+    border-style: outset;
+    border-color: whitesmoke;
+    box-shadow: 6px 9px 10px lightslate;
+}
+
+li{
+    display: flex;
+}
+
+.fixed {
+    position: fixed;
+  }
+
+.container {
+    /* height: 100%; */
+    /* max-width: 80%; */
+    width: 1200px;
+    margin: auto;
+    /* display: flex;
+    flex-direction: row;
+    
+    justify-content: space-evenly; */
+    /* align-items: center; */
+}
+
+nav {
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    top:0;
+    left: 0;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    z-index: 50;
+}
+
+#nav-display {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+}
+
+/* A logo, that onClick, will show the list of products */
+#nav-logo {
+    height: 60px;
+}
+
+#nav-title {
+    font-family: Advent Pro;
+    font-size: large;
+    white-space: nowrap;
+    color:grey;
+}
+
+footer {
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    bottom:0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    z-index: 45;
+}
+
+#footer-cart-actions {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+#footer-cart-summary {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+section {
+    position: relative;
+    margin: 80px 0;
+}
+
+.row {
+    /* background-color: red; */
+    /* margin: 0 25px ;
+    border-style: solid;
+    border-color: azure; */
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.col {
+    width: 50%;
+    /* height: 100%;
+    display: flex;
+    flex-direction: column; */
+
+}
+
+.list {
+    background-color: gainsboro;
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    border-style: outset;
+    border-color: whitesmoke;
+    box-shadow: 6px 9px 10px lightslategray;
+    display: flex;
+    justify-content: center;
+    font-family: Abel;
+    font-size: small;
+}
+
+#item-title {
+    white-space: nowrap;
+}
+
+#item-content {
+    width: 175px;
+}
+
+td {
+    padding: 3px;
+    vertical-align: top;
+    text-align: justify;
+    white-space: normal;
+    border-style: solid;
+}
+
+#img-col {
+    width: 100px;
+    padding: 0px;
+}
+
+#item-col {
+    width:300px;
+}
+
+#action-col {
+    width: 95px;
+    display: inline-table;
+}
+
+#grand-total {
+    font-family: Abel;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: whitesmoke;
+}
