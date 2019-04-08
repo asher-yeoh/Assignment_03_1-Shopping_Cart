@@ -24,7 +24,7 @@
         <div class="col">
           <div class="list-title">Product List</div>
           <div *ngIf="product.length !== 0">
-            <div class="list" *ngFor="let item of product">
+            <div class="list" *ngFor="let item of product; let i = index">
               <tr>
                 <td id="img-col">
                   <tr>
@@ -48,13 +48,13 @@
                 <td id="action-col">
                   <tr>
                     <td>
-                      <button>-</button>
+                      <button (click)="onDecreaseQty(i)">-</button>
                     </td>
                     <td>
                       <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
                     </td>
                     <td>
-                      <button>+</button>
+                      <button (click)="onIncreaseQty(i)">+</button>
                     </td>
                   </tr>
                   <tr>
@@ -125,7 +125,7 @@
     <div class="container">
       <div id="footer-cart-actions">
         <span><button (click)="isShow=!isShow">Clear My Cart</button></span>
-        <span><button *ngIf="isShow" (click)="onAddToCart()">Add To Cart</button></span>
+        <span><button *ngIf="isShow" (click)="onAddToCart(item)">Add To Cart</button></span>
       </div>
       <div id="footer-cart-summary">
         <div id="grand-total">Grand Total: RM 1234.56</div>

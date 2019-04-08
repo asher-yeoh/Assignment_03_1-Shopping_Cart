@@ -73,7 +73,44 @@ export class AppComponent {
     },
   ];
 
-  productList = Object.keys(this.product)
+  // productList = Object.keys(this.product)
+
+  // myCart = [];
+
+  onDecreaseQty(i) {
+    if (this.product[i].qty > 0) {
+      this.product[i].qty -= 1
+    }
+  }
+
+  onIncreaseQty (i) {
+    this.product[i].qty += 1
+    // window.alert(this.product[i].qty)
+
+  }
+
+//   onAddToCart(item) {
+//     const addToCart = Object.keys(this.product)
+  
+//     var obj = {
+//       id: addToCart[item].id,
+//       price: 40,
+//       desc: "Grapes (500g)",
+//       imgFile: "/assets/img/item-04.png",
+//       qty: 0,
+//       subtotal: 0,
+//       selected: false,
+//       hidden: false,
+//     };
+
+//   this.arrayText.push(obj);
+//   this.todosTasks = Object.keys(this.todos)
+// }
+
+
+
+
+
 
 // onClearMyCart () {
 //   this.product = {}
