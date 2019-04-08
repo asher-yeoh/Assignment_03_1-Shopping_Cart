@@ -251,6 +251,7 @@ td {
     font-weight: bolder;
     white-space: nowrap;
     color: rgba(249, 228, 224);
+    display: flex;
 }
 
 #img-col td {

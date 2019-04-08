@@ -123,7 +123,7 @@
         <span><button *ngIf="isShow" (click)="onAddToCart(item)">Add To Cart</button></span>
       </div>
       <div id="footer-cart-summary">
-        <div id="grand-total">Grand Total: RM 1234.56</div>
+        <div id="grand-total"><span id="item-title">Grand Total:</span> {{ grandTotal }}</div>
         <span><button (click)="onCheckOut()">Check Out</button></span>
       </div>
     </div>

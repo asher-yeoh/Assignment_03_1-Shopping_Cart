@@ -8,7 +8,8 @@ import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 })
 export class AppComponent {
   title = "Ace Shopping Mart";
-  isShow = true;
+  // isShow = true;
+  grandTotal = 0;
 
   product = [
     {
@@ -75,7 +76,8 @@ export class AppComponent {
 
   // productList = Object.keys(this.product)
 
-  // myCart = [];
+
+  myCart = [];
 
   onDecreaseQty(i) {
     if (this.product[i].qty > 0) {
