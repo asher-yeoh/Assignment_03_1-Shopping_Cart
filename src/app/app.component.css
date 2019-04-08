@@ -199,6 +199,8 @@ section {
 }
 
 td {
+    table-layout: fixed;
+    /* margin: 0 5px; */
     padding: 3px;
     vertical-align: top;
     text-align: justify;
@@ -217,11 +219,11 @@ td img {
 }
 
 #item-col {
-    width:300px;
+    width:285px;
 }
 
 #action-col {
-    width: 95px;
+    width: 140px;
     display: inline-table;
 }
 
