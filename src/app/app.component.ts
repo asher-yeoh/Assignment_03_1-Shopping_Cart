@@ -85,8 +85,6 @@ export class AppComponent {
 
   onIncreaseQty (i) {
     this.product[i].qty += 1
-    // window.alert(this.product[i].qty)
-
   }
 
 //   onAddToCart(item) {
