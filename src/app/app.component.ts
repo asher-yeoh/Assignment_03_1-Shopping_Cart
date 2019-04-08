@@ -103,7 +103,7 @@ export class AppComponent {
     else {
       return "rgba(140, 128, 124, 0.7)"
     }
-}
+  }
 
   showSelected(): boolean {
     for (const i in this.product) {
