@@ -202,7 +202,12 @@ td {
     vertical-align: top;
     text-align: justify;
     white-space: normal;
+    /* border-style: solid; */
+}
+
+td img {
     border-style: solid;
+    border-color: whitesmoke;
 }
 
 #img-col {
@@ -224,4 +229,19 @@ td {
     font-weight: bolder;
     white-space: nowrap;
     color: whitesmoke;
+}
+
+#img-col td {
+    border-style: inset;
+    border-color: whitesmoke;
+}
+
+#item-col td {
+    border-style: outset;
+    border-color: whitesmoke;
+}
+
+#action-col td {
+    border-style: outset;
+    border-color: whitesmoke;
 }

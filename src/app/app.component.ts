@@ -14,8 +14,8 @@ export class AppComponent {
     {
       id: "000001",
       price: 10,
-      desc: "Cherry Product Aaaaaaaaa aa aaa aaaaa aa aaa aaaaa aa aaa aaaaa aaa aa",
-      imgFile: "/assets/img/item-05.png",
+      desc: "Apple (500g) Product Aaaaaaaaa aa aaa aaaaa aa aaa aaaaa aa aaa aaaaa aaa aa",
+      imgFile: "/assets/img/item-01.png",
       qty: 0,
       selected: false,
       hidden: false,
@@ -23,8 +23,8 @@ export class AppComponent {
     {
       id: "000002",
       price: 20,
-      desc: "Product Bb",
-      imgFile: "/assets/img/item-05.png",
+      desc: "Orange (500g)",
+      imgFile: "/assets/img/item-02.png",
       qty: 0,
       selected: false,
       hidden: false,
@@ -32,8 +32,8 @@ export class AppComponent {
     {
       id: "000003",
       price: 30,
-      desc: "Product Cc",
-      imgFile: "/assets/img/item-05.png",
+      desc: "Strawberry (500g)",
+      imgFile: "/assets/img/item-03.png",
       qty: 0,
       selected: false,
       hidden: false,
@@ -41,8 +41,8 @@ export class AppComponent {
     {
       id: "000004",
       price: 40,
-      desc: "Product Dd",
-      imgFile: "/assets/img/item-05.png",
+      desc: "Grapes (500g)",
+      imgFile: "/assets/img/item-04.png",
       qty: 0,
       selected: false,
       hidden: false,
@@ -50,7 +50,7 @@ export class AppComponent {
     {
       id: "000005",
       price: 50,
-      desc: "Product Ee",
+      desc: "Cherry (500g)",
       imgFile: "/assets/img/item-05.png",
       qty: 0,
       selected: false,
@@ -59,8 +59,8 @@ export class AppComponent {
     {
       id: "000006",
       price: 60,
-      desc: "Product Ff",
-      imgFile: "/assets/img/item-05.png",
+      desc: "Watermelon (500g)",
+      imgFile: "/assets/img/item-06.png",
       qty: 0,
       selected: false,
       hidden: false,
