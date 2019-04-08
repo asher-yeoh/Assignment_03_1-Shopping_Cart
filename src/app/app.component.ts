@@ -89,6 +89,23 @@ export class AppComponent {
     this.product[i].qty += 1
   }
 
+  onSelected (i) {
+    this.product[i].selected =!this.product[i].selected
+    
+    // if (this.product[i].selected) {window.alert("selected")}
+    // else {window.alert("deselected")}
+  }
+
+  checkSelected(i): string {
+    if (this.product[i].selected) {
+      return "rgba(178, 147, 136, 1)"
+    }
+    else {
+      return "rgba(140, 128, 124, 0.7)"
+    }
+}
+
+
 //   onAddToCart(item) {
 //     const addToCart = Object.keys(this.product)
   

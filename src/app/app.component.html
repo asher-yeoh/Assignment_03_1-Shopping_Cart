@@ -19,7 +19,7 @@
         <div class="col" *ngIf="productListShow">
           <div class="list-title">Product List</div>
           <div *ngIf="product.length !== 0">
-            <div class="list" *ngFor="let item of product; let i = index">
+            <div class="list" *ngFor="let item of product; let i = index" [style.background-color]="checkSelected(i)">
               <tr>
                 <td id="img-col">
                   <tr>
@@ -59,7 +59,7 @@
                   </tr>
                   <tr>
                     <td colspan="4">
-                      <span><button>Select</button></span>
+                      <span><button (click)="onSelected(i)">Select</button></span>
                     </td>
                   </tr>
                 </td>
@@ -104,7 +104,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <span><button>Select</button></span>
+                    <span><button>Remove</button></span>
                   </td>
                 </tr>
               </td>
