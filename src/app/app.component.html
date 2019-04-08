@@ -19,25 +19,25 @@
       <div class="col" *ngIf="productListShow">
         <div class="list-title">Product List</div>
         <div *ngIf="product.length !== 0">
-          <div class="list" *ngFor="let item of product; let i = index" [style.background-color]="checkSelected(i)">
+          <div class="list" *ngFor="let itemProduct of product; let i = index" [style.background-color]="checkSelected(i)">
             <tr>
               <td id="img-col">
                 <tr>
-                  <td><img src="{{ item.imgFile }}" /></td>
+                  <td><img src="{{ itemProduct.imgFile }}" /></td>
                 </tr>
               </td>
               <td id="item-col">
                 <tr>
                   <td id="item-title">Item#: </td>
-                  <td id="item-content">{{ item.id }}</td>
+                  <td id="item-content">{{ itemProduct.id }}</td>
                 </tr>
                 <tr>
                   <td id="item-title">Price: </td>
-                  <td id="item-content">RM {{ item.price }}</td>
+                  <td id="item-content">RM {{ itemProduct.price }}</td>
                 </tr>
                 <tr>
                   <td id="item-title">Item Description: </td>
-                  <td id="item-content">{{ item.desc }}</td>
+                  <td id="item-content">{{ itemProduct.desc }}</td>
                 </tr>
               </td>
               <td id="action-col">
@@ -46,7 +46,7 @@
                     <button (click)="onDecreaseQty(i)">-</button>
                   </td>
                   <td colspan="2">
-                    <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                    <span><span id="item-title">Qty:</span>{{ itemProduct.qty }}</span>
                   </td>
                   <td colspan="1">
                     <button (click)="onIncreaseQty(i)">+</button>
@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                   <td colspan="4">
-                    <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
+                    <span><span id="item-title">Subtotal:</span>RM {{ itemProduct.subtotal }}</span>
                   </td>
                 </tr>
                 <tr>
@@ -70,36 +70,36 @@
       <!-- MyCart List -->
       <div class="col" *ngIf="myCartListShow">
         <div class="list-title">My Cart List</div>
-        <div class="list" *ngFor="let item of product">
+        <div class="list" *ngFor="let itemMyCart of myCart">
           <tr>
             <td id="img-col">
               <tr>
-                <td><img src="{{ item.imgFile }}" /></td>
+                <td><img src="{{ itemMyCart.imgFile }}" /></td>
               </tr>
             </td>
             <td id="item-col">
               <tr>
                 <td id="item-title">Item#: </td>
-                <td id="item-content">{{ item.id }}</td>
+                <td id="item-content">{{ itemMyCart.id }}</td>
               </tr>
               <tr>
                 <td id="item-title">Price: </td>
-                <td id="item-content">RM {{ item.price }}</td>
+                <td id="item-content">RM {{ itemMyCart.price }}</td>
               </tr>
               <tr>
                 <td id="item-title">Item Description: </td>
-                <td id="item-content">{{ item.desc }}</td>
+                <td id="item-content">{{ itemMyCart.desc }}</td>
               </tr>
             </td>
             <td id="action-col">
               <tr>
                 <td>
-                  <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                  <span><span id="item-title">Qty:</span>{{ itemMyCart.qty }}</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
+                  <span><span id="item-title">Subtotal:</span>RM {{ itemMyCart.subtotal }}</span>
                 </td>
               </tr>
               <tr>
