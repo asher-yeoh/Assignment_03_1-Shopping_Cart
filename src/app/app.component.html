@@ -1,76 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="fixed">
-    <div class="container">
-      <div id="nav-display">
-        <!-- A logo, that onClick, will show the list of products -->
-        <button id="nav-logo" (click)="productListShow=!productListShow"></button>
-        <div id="nav-title" style="text-align:center">
-          <h2>Welcome to {{ title }}!</h2>
-        </div>
-        <button id="myCart-button" (click)="myCartListShow=!myCartListShow">My Cart</button>
+  <div class="container">
+    <div id="nav-display">
+      <!-- A logo, that onClick, will show the list of products -->
+      <button id="nav-logo" (click)="productListShow=!productListShow"></button>
+      <div id="nav-title" style="text-align:center">
+        <h2>Welcome to {{ title }}!</h2>
       </div>
+      <button id="myCart-button" (click)="myCartListShow=!myCartListShow">My Cart</button>
     </div>
-  </nav>
-  <!-- Section -->
-  <section>
-    <div class="container">
-      <div class="row">
-        <!-- Product List -->
-        <div class="col" *ngIf="productListShow">
-          <div class="list-title">Product List</div>
-          <div *ngIf="product.length !== 0">
-            <div class="list" *ngFor="let item of product; let i = index" [style.background-color]="checkSelected(i)">
-              <tr>
-                <td id="img-col">
-                  <tr>
-                    <td><img src="{{ item.imgFile }}" /></td>
-                  </tr>
-                </td>
-                <td id="item-col">
-                  <tr>
-                    <td id="item-title">Item#: </td>
-                    <td id="item-content">{{ item.id }}</td>
-                  </tr>
-                  <tr>
-                    <td id="item-title">Price: </td>
-                    <td id="item-content">RM {{ item.price }}</td>
-                  </tr>
-                  <tr>
-                    <td id="item-title">Item Description: </td>
-                    <td id="item-content">{{ item.desc }}</td>
-                  </tr>
-                </td>
-                <td id="action-col">
-                  <tr>
-                    <td colspan="1">
-                      <button (click)="onDecreaseQty(i)">-</button>
-                    </td>
-                    <td colspan="2">
-                      <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
-                    </td>
-                    <td colspan="1">
-                      <button (click)="onIncreaseQty(i)">+</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="4">
-                      <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="4">
-                      <span><button (click)="onSelected(i)">Select</button></span>
-                    </td>
-                  </tr>
-                </td>
-              </tr>
-            </div>
-          </div>
-        </div>
-        <!-- MyCart List -->
-        <div class="col" *ngIf="myCartListShow">
-          <div class="list-title">My Cart List</div>
-          <div class="list" *ngFor="let item of product">
+  </div>
+</nav>
+<!-- Section -->
+<section>
+  <div class="container">
+    <div class="row">
+      <!-- Product List -->
+      <div class="col" *ngIf="productListShow">
+        <div class="list-title">Product List</div>
+        <div *ngIf="product.length !== 0">
+          <div class="list" *ngFor="let item of product; let i = index" [style.background-color]="checkSelected(i)">
             <tr>
               <td id="img-col">
                 <tr>
@@ -93,18 +42,24 @@
               </td>
               <td id="action-col">
                 <tr>
-                  <td>
+                  <td colspan="1">
+                    <button (click)="onDecreaseQty(i)">-</button>
+                  </td>
+                  <td colspan="2">
                     <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                  </td>
+                  <td colspan="1">
+                    <button (click)="onIncreaseQty(i)">+</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td colspan="4">
                     <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <span><button>Remove</button></span>
+                  <td colspan="4">
+                    <span><button (click)="onSelected(i)">Select</button></span>
                   </td>
                 </tr>
               </td>
@@ -112,20 +67,64 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  
-  <footer class="fixed">
-    <div class="container">
-      <div id="footer-cart-actions">
-        <span><button (click)="isShow=!isShow">Clear My Cart</button></span>
-        <span><button *ngIf="isShow" (click)="onAddToCart(item)">Add To Cart</button></span>
+      <!-- MyCart List -->
+      <div class="col" *ngIf="myCartListShow">
+        <div class="list-title">My Cart List</div>
+        <div class="list" *ngFor="let item of product">
+          <tr>
+            <td id="img-col">
+              <tr>
+                <td><img src="{{ item.imgFile }}" /></td>
+              </tr>
+            </td>
+            <td id="item-col">
+              <tr>
+                <td id="item-title">Item#: </td>
+                <td id="item-content">{{ item.id }}</td>
+              </tr>
+              <tr>
+                <td id="item-title">Price: </td>
+                <td id="item-content">RM {{ item.price }}</td>
+              </tr>
+              <tr>
+                <td id="item-title">Item Description: </td>
+                <td id="item-content">{{ item.desc }}</td>
+              </tr>
+            </td>
+            <td id="action-col">
+              <tr>
+                <td>
+                  <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span><button>Remove</button></span>
+                </td>
+              </tr>
+            </td>
+          </tr>
+        </div>
       </div>
-      <div id="footer-cart-summary">
-        <div id="grand-total"><span id="item-title">Grand Total:</span> {{ grandTotal }}</div>
-        <span><button (click)="onCheckOut()">Check Out</button></span>
-      </div>
     </div>
-  </footer>
-  
+  </div>
+</section>
+
+
+<footer class="fixed">
+  <div class="container">
+    <div id="footer-cart-actions">
+      <span><button (click)="onClearCart(i)">Clear My Cart</button></span>
+      <span><button *ngIf="showSelected()" (click)="onAddToCart(i)">Add To Cart</button></span>
+    </div>
+    <div id="footer-cart-summary">
+      <div id="grand-total"><span id="item-title">Grand Total:</span> {{ grandTotal }}</div>
+      <span><button (click)="onCheckOut()">Check Out</button></span>
+    </div>
+  </div>
+</footer>

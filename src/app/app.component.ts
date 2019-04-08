@@ -8,7 +8,7 @@ import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 })
 export class AppComponent {
   title = "Ace Shopping Mart";
-  // isShow = true;
+  isSelected = false;
   grandTotal = 0;
 
   product = [
@@ -104,6 +104,20 @@ export class AppComponent {
       return "rgba(140, 128, 124, 0.7)"
     }
 }
+
+  showSelected(): boolean {
+    for (const i in this.product) {
+      if (this.product[i].selected === true) {
+        this.isSelected = true
+        break
+      }
+      else {
+        this.isSelected = false
+      }
+    }
+    return this.isSelected
+  }
+  
 
 
 //   onAddToCart(item) {
