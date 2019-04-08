@@ -76,8 +76,20 @@ export class AppComponent {
 
   // productList = Object.keys(this.product)
 
-  myCart = [{}];
-  // myCartList = Object.keys(this.myCart)
+  myCart = [
+    {
+      id: "",
+      price: 0,
+      desc: "",
+      imgFile: "",
+      qty: 0,
+      subtotal: 0,
+      selected: false,
+      hidden: false,
+    }
+  ];
+
+  myCartList = Object.keys(this.myCart)
   
   onDecreaseQty(i) {
     if (this.product[i].qty > 0) {
@@ -152,35 +164,36 @@ export class AppComponent {
   // }
 
 
-  // onAddToCart() {
-  //   window.alert("Check Point 01")
-
-  //   const j = Object.keys(this.myCart)
-
-  //   for (const i in this.product) {
-  //     if (this.product[i].selected === true){
-  //       for (const j in this.myCart) {
+  onAddToCart() {
+    // window.alert("Check Point 01")
+    for (const i in this.product) {
+      if (this.product[i].selected === true){
+        for (const j in this.myCart) {
           
-  //         this.myCart[j].id = this.product[i].id
-  //         this.myCart[j].price = this.product[i].price
-  //         this.myCart[j].desc = this.product[i].desc
-  //         this.myCart[j].imgFile = this.product[i].imgFile
-  //         this.myCart[j].qty = this.product[i].subtotal
-  //         this.myCart[j].selected = this.product[i].selected
-  //         this.myCart[j].hidden = this.product[i].hidden
-  //         window.alert(i)
-  //         window.alert(j)
-  //       }
-  //     }
-  //   }
-  //   this.myCartList = Object.keys(this.myCart)
-  // }
+          this.myCart[j].id = this.product[i].id
+          this.myCart[j].price = this.product[i].price
+          this.myCart[j].desc = this.product[i].desc
+          this.myCart[j].imgFile = this.product[i].imgFile
+          this.myCart[j].qty = this.product[i].qty
+          this.myCart[j].subtotal = this.product[i].subtotal
+          this.myCart[j].selected = this.product[i].selected
+          this.myCart[j].hidden = this.product[i].hidden
+          
+          // this.myCartList = Object.keys(this.myCart)
+          window.alert(i)
+          window.alert(j)
+        }
+      }
+    }
+  }
 
   // onAddToCart() {
+    
   //   const tasks = Object.keys(this.myCart)
-  //   this.myCart.id = "test1"
+  //   this.myCart[0].id = this.product[1].id
+  //   this.myCart[0].desc = this.product[1].desc
   //   this.myCartList = Object.keys(this.myCart)
-  //   window.alert(this.myCart[0].id )
+    
   // }
 
   // onAddToCart() {
