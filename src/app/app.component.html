@@ -50,9 +50,16 @@
                     <td>
                       <button>-</button>
                     </td>
-                    <td><span>Qty: {{ item.qty }}</span></td>
+                    <td>
+                      <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                    </td>
                     <td>
                       <button>+</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
                     </td>
                   </tr>
                   <tr>
@@ -92,7 +99,12 @@
               <td id="action-col">
                 <tr>
                   <td>
-                    <span>Qty: {{ item.qty }}</span>
+                    <span><span id="item-title">Qty:</span>{{ item.qty }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span><span id="item-title">Subtotal:</span>RM {{ item.subtotal }}</span>
                   </td>
                 </tr>
                 <tr>
@@ -116,7 +128,7 @@
         <span><button *ngIf="isShow" (click)="onAddToCart()">Add To Cart</button></span>
       </div>
       <div id="footer-cart-summary">
-        <div id="grand-total">Grand Total: 1234.56</div>
+        <div id="grand-total">Grand Total: RM 1234.56</div>
         <span><button (click)="onCheckOut()">Check Out</button></span>
       </div>
     </div>

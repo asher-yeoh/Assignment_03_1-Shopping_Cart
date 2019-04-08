@@ -191,6 +191,7 @@ section {
 
 #item-title {
     white-space: nowrap;
+    font-weight: bold;
 }
 
 #item-content {
