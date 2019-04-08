@@ -120,7 +120,7 @@
   <div class="container">
     <div id="footer-cart-actions">
       <span><button (click)="onClearCart(i)">Clear My Cart</button></span>
-      <span><button *ngIf="showSelected()" (click)="onAddToCart(i)">Add To Cart</button></span>
+      <span><button *ngIf="showSelected()" (click)="onAddToCart()">Add To Cart</button></span>
     </div>
     <div id="footer-cart-summary">
       <div id="grand-total"><span id="item-title">Grand Total:</span> {{ grandTotal }}</div>

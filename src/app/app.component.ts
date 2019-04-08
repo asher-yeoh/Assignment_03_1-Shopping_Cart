@@ -18,7 +18,7 @@ export class AppComponent {
       desc: "Apple (500g) Product Aaaaaaaaa aa aaa aaaaa aa aaa aaaaa aa aaa aaaaa aaa aa",
       imgFile: "/assets/img/item-01.png",
       qty: 0,
-      subtotal: 1000,
+      subtotal: 0,
       selected: false,
       hidden: false,
     },
@@ -76,7 +76,6 @@ export class AppComponent {
 
   // productList = Object.keys(this.product)
 
-
   myCart = [];
 
   onDecreaseQty(i) {
@@ -115,6 +114,7 @@ export class AppComponent {
 
     if (this.product[i].selected === false) {
       this.product[i].qty = 0
+      this.product[i].subtotal = 0
     }
   }
 
@@ -140,6 +140,9 @@ export class AppComponent {
     return this.isSelected
   }
   
+
+  // this.myCart[0].id = this.product[0].id
+
 
 
 //   onAddToCart(item) {
