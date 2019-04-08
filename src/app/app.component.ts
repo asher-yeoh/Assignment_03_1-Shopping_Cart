@@ -81,17 +81,33 @@ export class AppComponent {
 
   onDecreaseQty(i) {
     if (this.product[i].qty > 0) {
+      if (this.product[i].qty == 1 && this.product[i].selected === true){
+        window.alert("This item is selected, qty has to be at least one(1).")
+        this.product[i].qty += 1
+      }
+
       this.product[i].qty -= 1
+      this.product[i].subtotal = this.product[i].qty * this.product[i].price
     }
   }
 
   onIncreaseQty (i) {
     this.product[i].qty += 1
+    this.product[i].subtotal = this.product[i].qty * this.product[i].price
   }
+
+  // When myCart List is ready
+  // checkGrandTotal(): number{
+  //   let sum = 0
+  //   for (const i in this.myCart) {
+  //     sum = sum + this.myCart[i].subtotal
+  //   }
+  //   return sum
+  // }
 
   onSelected (i) {
     if (this.product[i].qty == 0){
-      windows.alert("Please select at least one(1) qty.")
+      window.alert("Please select at least one(1) qty.")
     }
     else {
       this.product[i].selected =!this.product[i].selected
