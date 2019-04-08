@@ -14,17 +14,17 @@
 }
 
 button {
-    background-color: whitesmoke;
+    background-color: rgba(91, 89, 96);
     border-radius: 12px;
     /* margin: 10px; */
     /* padding: 10px; */
     border-style: outset;
-    border-color: whitesmoke;
+    border-color: rgb(140, 128, 124);
     text-align: center;
     font-family: Abel;
     font-weight: bold;
     white-space: nowrap;
-    color: darkslategray;
+    color: rgba(249, 228, 224);
     outline: none;
     cursor: pointer;
 }
@@ -45,15 +45,15 @@ span {
 } */
 
 .list-title {
-    background-color: #323538;
+    background-color: rgba(165, 117, 116);
     width: 100%;
     height: 50px;
-    border-style: solid;
+    /* border-style: inset; */
     /* padding:0 10px; */
     font-family: Abel;
     font-size: xx-large;
     white-space: nowrap;
-    color: whitesmoke;
+    color: rgba(249, 228, 224);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,7 +92,7 @@ li{
 }
 
 nav {
-    background-color: black;
+    background-color: rgba(104, 76, 76);
     width: 100%;
     height: 80px;
     top:0;
@@ -107,23 +107,32 @@ nav {
     display: flex;
     /* flex-direction: row; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 /* A logo, that onClick, will show the list of products */
 #nav-logo {
+    border-color: grey;
+    margin: 10px;
     height: 60px;
+    width: 60px;
+    outline: none;
+    background: url('/assets/img/logo-02.png');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 60px;
 }
 
 #nav-title {
+    color: rgba(47, 22, 35);
     font-family: Advent Pro;
     font-size: large;
     white-space: nowrap;
-    color:grey;
 }
 
 footer {
-    background-color: black;
+    background-color: rgba(47, 22, 35);
     width: 100%;
     height: 80px;
     bottom:0;
@@ -161,28 +170,38 @@ section {
     /* margin: 0 25px ;
     border-style: solid;
     border-color: azure; */
-
     display: flex;
     flex-direction: row;
-
+    justify-content: space-evenly;
 }
 
 .col {
+    background-color: rgba(165, 117, 116, 0.5);
     width: 50%;
+    border-style: groove;
+    border-color: rgba(249, 228, 224);
     /* height: 100%;
     display: flex;
     flex-direction: column; */
 
 }
 
+.col-left {
+    float: left;
+}
+
+.col-right {
+    float: right;
+}
+
 .list {
-    background-color: gainsboro;
+    background-color: rgba(140, 128, 124, 0.7);
     list-style-type: none;
     margin: 10px;
     padding: 10px;
     border-style: outset;
-    border-color: whitesmoke;
-    box-shadow: 6px 9px 10px lightslategray;
+    border-color: rgba(140, 128, 124, 0.9);
+    box-shadow: 3px 3px 6px  rgba(66, 64, 64, 0.7);
     display: flex;
     justify-content: center;
     font-family: Abel;
@@ -208,10 +227,10 @@ td {
     /* border-style: solid; */
 }
 
-td img {
+/* td img {
     border-style: solid;
-    border-color: whitesmoke;
-}
+    border-color: black
+} */
 
 #img-col {
     width: 100px;
@@ -231,20 +250,20 @@ td img {
     font-family: Abel;
     font-weight: bolder;
     white-space: nowrap;
-    color: whitesmoke;
+    color: rgba(249, 228, 224);
 }
 
 #img-col td {
     border-style: inset;
-    border-color: whitesmoke;
+    border-color: rgba(206, 200, 195, 0.8);
 }
 
 #item-col td {
     border-style: outset;
-    border-color: whitesmoke;
+    border-color: rgba(206, 200, 195, 0.8);
 }
 
 #action-col td {
     border-style: outset;
-    border-color: whitesmoke;
+    border-color: rgba(206, 200, 195, 0.8);
 }
