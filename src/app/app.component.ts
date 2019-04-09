@@ -171,12 +171,10 @@ export class AppComponent {
 
   onClearCart() {
     for (const i in this.product) {
-      if (this.product[i].hidden === true){
-        this.product[i].qty = 0
-        this.product[i].subtotal = 0
-        this.product[i].selected = false
-        this.product[i].hidden = false
-      }
+      this.product[i].qty = 0
+      this.product[i].subtotal = 0
+      this.product[i].selected = false
+      this.product[i].hidden = false
     }
   }
   
