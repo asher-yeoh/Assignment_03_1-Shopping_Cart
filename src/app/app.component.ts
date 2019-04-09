@@ -15,7 +15,7 @@ export class AppComponent {
   productList = [
     {
       id: "000001",
-      price: 10.00,
+      price: 10.50,
       desc: "Apple (500g)",
       imgFile: "/assets/img/item-01.png",
       qty: 0,
