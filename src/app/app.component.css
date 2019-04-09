@@ -36,6 +36,14 @@ span {
     white-space: nowrap;
 }
 
+div h3 {
+    font-family: Abel;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: rgb(44, 33, 31);
+    text-align: center;
+}
+
 /* table {
     table-layout: fixed;
     width: 100%;

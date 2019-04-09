@@ -18,8 +18,8 @@
       <!-- Product List -->
       <div class="col" *ngIf="productListShow">
         <div class="list-title">Product List</div>
-        <div *ngIf="product.length !== 0">
-          <div class="list" *ngFor="let itemProduct of product; let i = index" [style.background-color]="checkSelected(i)" [style.display]="checkHidden(i)">
+        <div *ngIf="productList.length !== 0">
+          <div class="list" *ngFor="let itemProduct of productList; let i = index" [style.background-color]="checkSelected(i)" [style.display]="checkHiddenProduct(i)">
             <tr>
               <td id="img-col">
                 <tr>
@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                   <td id="item-title">Price: </td>
-                  <td id="item-content">RM {{ itemProduct.price }}</td>
+                  <td id="item-content">RM {{ itemProduct.price.toFixed(2) }}</td>
                 </tr>
                 <tr>
                   <td id="item-title">Item Description: </td>
@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                   <td colspan="4">
-                    <span><span id="item-title">Subtotal:</span>RM {{ itemProduct.subtotal }}</span>
+                    <span><span id="item-title">Subtotal:</span>RM {{ itemProduct.subtotal.toFixed(2) }}</span>
                   </td>
                 </tr>
                 <tr>
@@ -70,7 +70,7 @@
       <!-- MyCart List -->
       <div class="col" *ngIf="myCartListShow">
         <div class="list-title">My Cart List</div>
-        <div class="list" *ngFor="let itemMyCart of myCart">
+        <div class="list" *ngFor="let itemMyCart of myCartList; let j = index" [style.display]="checkHiddenMyCart(j)">
           <tr>
             <td id="img-col">
               <tr>
@@ -84,7 +84,7 @@
               </tr>
               <tr>
                 <td id="item-title">Price: </td>
-                <td id="item-content">RM {{ itemMyCart.price }}</td>
+                <td id="item-content">RM {{ itemMyCart.price.toFixed(2) }}</td>
               </tr>
               <tr>
                 <td id="item-title">Item Description: </td>
@@ -99,7 +99,7 @@
               </tr>
               <tr>
                 <td>
-                  <span><span id="item-title">Subtotal:</span>RM {{ itemMyCart.subtotal }}</span>
+                  <span><span id="item-title">Subtotal:</span>RM {{ itemMyCart.subtotal.toFixed(2) }}</span>
                 </td>
               </tr>
               <tr>
@@ -109,6 +109,9 @@
               </tr>
             </td>
           </tr>
+        </div>
+        <div *ngIf="myCartList.length === 0">
+          <h3>Your cart is empty.</h3>
         </div>
       </div>
     </div>
@@ -123,7 +126,7 @@
       <span><button *ngIf="showSelected()" (click)="onAddToCart()">Add To Cart</button></span>
     </div>
     <div id="footer-cart-summary">
-      <div id="grand-total"><span id="item-title">Grand Total:</span> {{ grandTotal }}</div>
+      <div id="grand-total"><span id="item-title">Grand Total: RM </span> {{ checkGrandTotal().toFixed(2) }}</div>
       <span><button (click)="onCheckOut()">Check Out</button></span>
     </div>
   </div>
