@@ -16,71 +16,103 @@ export class AppComponent {
     {
       id: "000001",
       price: 10.50,
-      desc: "Apple (500g) Product Aaaaaaaaa aa aaa aaaaa aa aaa aaaaa aa aaa aaaaa aaa aa",
+      desc: "Apple (500g)",
       imgFile: "/assets/img/item-01.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
     },
     {
       id: "000002",
-      price: 20.50,
+      price: 15.00,
       desc: "Orange (500g)",
       imgFile: "/assets/img/item-02.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
     },
     {
       id: "000003",
-      price: 30.50,
+      price: 30.00,
       desc: "Strawberry (500g)",
       imgFile: "/assets/img/item-03.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
     },
     {
       id: "000004",
-      price: 40.50,
+      price: 25.50,
       desc: "Grapes (500g)",
       imgFile: "/assets/img/item-04.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
     },
     {
       id: "000005",
-      price: 50.50,
+      price: 30.50,
       desc: "Cherry (500g)",
       imgFile: "/assets/img/item-05.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
     },
     {
       id: "000006",
-      price: 60.50,
+      price: 20.50,
       desc: "Watermelon (500g)",
       imgFile: "/assets/img/item-06.png",
       qty: 0,
       subtotal: 0,
       selected: false,
       hidden: false,
+      button: "Select",
+    },
+    {
+      id: "000007",
+      price: 50.50,
+      desc: "Pineapple (500g)",
+      imgFile: "/assets/img/item-07.png",
+      qty: 0,
+      subtotal: 0,
+      selected: false,
+      hidden: false,
+      button: "Select",
+    },
+    {
+      id: "000008",
+      price: 40.00,
+      desc: "Rasberry (500g)",
+      imgFile: "/assets/img/item-08.png",
+      qty: 0,
+      subtotal: 0,
+      selected: false,
+      hidden: false,
+      button: "Select",
     },
   ];
 
   myCartList =[];
 
   onDecreaseQty(i) {
+    if (this.productList[i].qty == 0 && this.productList[i].selected === false) {
+      window.alert("The quantity cannot be less than 0.")
+    }
+
     if (this.productList[i].qty > 0) {
       if (this.productList[i].qty == 1 && this.productList[i].selected === true){
-        window.alert("This item is selected, qty has to be at least one(1).")
+        window.alert("This item is selected, please remain at least one(1) quantity to proceed.")
         this.productList[i].qty += 1
       }
 
@@ -102,22 +134,25 @@ export class AppComponent {
     return grandTotal
   }
 
-  onSelected (i) {
+  onSelect (i) {
     if (this.productList[i].qty == 0){
-      window.alert("Please select at least one(1) qty.")
+      window.alert("Please select at least one(1) quantity to proceed.")
     }
     else {
       this.productList[i].selected =!this.productList[i].selected
+      // this.productList[i].button = "Deselected"
     }
 
     if (this.productList[i].selected === false) {
       this.productList[i].qty = 0
       this.productList[i].subtotal = 0
+      this.productList[i].button = "Select"
     }
   }
 
   checkSelected(i): string {
     if (this.productList[i].selected) {
+      this.productList[i].button = "Deselected"
       return "rgba(178, 147, 136, 1)"
     }
     else {
@@ -150,16 +185,20 @@ export class AppComponent {
           'subtotal': this.productList[i].subtotal,
           'selected': this.productList[i].selected,
           'hidden': this.productList[i].hidden,
+          'productListIndex': i,
         }),
 
-     
-        window.alert(this.myCartList.length)
+         window.alert(this.myCartList.length)
       }
     }
 
     for (const i in this.productList) {
       if (this.productList[i].selected === true){
+        this.productList[i].qty = 0
+        this.productList[i].subtotal = 0
+        this.productList[i].selected = false
         this.productList[i].hidden = true
+        this.productList[i].button = "Select"
       }
     }
   }
@@ -184,12 +223,27 @@ export class AppComponent {
     }
   }
 
-  checkHiddenMyCart(j): string {
-    if (this.myCartList[j].hidden) {
+  checkHiddenMyCart(i): string {
+    if (this.myCartList[i].hidden) {
       return "none"
     }
     else {
       return "inherit"
+    }
+  }
+
+  onRemove(i) {
+      this.productList[this.myCartList[i].productListIndex].hidden = false
+      this.myCartList.splice(i, 1)
+  }
+
+  onCheckOut() {
+    if (this.checkGrandTotal().toFixed(2) == "0.00") {
+      window.alert("Your shopping cart is empty.")
+    }
+    else {
+      window.alert("Total payment is RM " + this.checkGrandTotal().toFixed(2) + ".")
+      this.onClearCart()
     }
   }
 
