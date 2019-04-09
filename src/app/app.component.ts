@@ -162,10 +162,18 @@ export class AppComponent {
   }
 
   onAddToCart() {
-
     for (const i in this.product) {
       if (this.product[i].selected === true){
         this.product[i].hidden = true
+      }
+    }
+  }
+
+  onClearCart() {
+    for (const i in this.product) {
+      if (this.product[i].hidden === true){
+        this.product[i].hidden = false
+        this.product[i].selected = false
       }
     }
   }
