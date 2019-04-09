@@ -104,6 +104,7 @@ export class AppComponent {
   ];
 
   myCartList =[];
+  order = {};
 
   onDecreaseQty(i) {
     if (this.productList[i].qty == 0 && this.productList[i].selected === false) {
@@ -174,6 +175,8 @@ export class AppComponent {
   }
 
   onAddToCart() {
+
+    let x = this.myCartList.length
     for (const i in this.productList) {
       if (this.productList[i].selected === true){
         this.myCartList.push({
@@ -187,8 +190,7 @@ export class AppComponent {
           'hidden': this.productList[i].hidden,
           'productListIndex': i,
         }),
-
-         window.alert(this.myCartList.length)
+        x = this.myCartList.length
       }
     }
 
@@ -204,6 +206,10 @@ export class AppComponent {
   }
 
   onClearCart() {
+    if (this.checkGrandTotal().toFixed(2) == "0.00") {
+      window.alert("Your shopping cart is empty.")
+    }
+
     for (const i in this.productList) {
       this.productList[i].qty = 0
       this.productList[i].subtotal = 0
