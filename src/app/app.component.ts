@@ -9,6 +9,7 @@ import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 export class AppComponent {
   title = "Ace Shopping Mart";
   isSelected = false;
+  isHidden = false;
   grandTotal = 0;
 
   product = [
@@ -76,20 +77,27 @@ export class AppComponent {
 
   // productList = Object.keys(this.product)
 
-  myCart = [
-    {
-      id: "",
-      price: 0,
-      desc: "",
-      imgFile: "",
-      qty: 0,
-      subtotal: 0,
-      selected: false,
-      hidden: false,
-    }
-  ];
+  myCart =[{}];
 
-  myCartList = Object.keys(this.myCart)
+  myCartKey = Object.keys(this.myCart)
+  myCartValue = Object.values(this.myCart)
+
+  // myCart = [
+  //   {
+  //     id: "",
+  //     price: 0,
+  //     desc: "",
+  //     imgFile: "",
+  //     qty: 0,
+  //     subtotal: 0,
+  //     selected: false,
+  //     hidden: false,
+  //   }
+  // ];
+
+
+
+
   
   onDecreaseQty(i) {
     if (this.product[i].qty > 0) {
@@ -152,7 +160,57 @@ export class AppComponent {
     }
     return this.isSelected
   }
+
+  onAddToCart() {
+
+    for (const i in this.product) {
+      if (this.product[i].selected === true){
+        this.product[i].hidden = true
+      }
+    }
+  }
   
+  checkHidden(i): string {
+    if (this.product[i].hidden) {
+      return "none"
+    }
+    else {
+      return "inherit"
+    }
+  }
+
+
+  // onAddToCart() {
+
+  //   for (const i in this.product) {
+  //     if (this.product[i].selected === true){
+  //       this.product[i].hidden = true
+  //       window.alert(i)
+  //       window.alert(this.product[i].hidden)
+  //     }
+  //   }
+
+    
+  //   // const myCartKeyVar = Object.keys(this.myCart)
+  //   // const myCartValueVar = Object.values(this.myCart)
+  //   window.alert(this.myCart)
+  //   window.alert(this.myCartKey)
+  //   window.alert(this.myCartValue)
+  //   window.alert(this.myCartKey.length)
+
+  //   //Insert value into instance
+  //   this.myCart = [{"id": "10001" ,"price": "20001"},{"id": "10002" ,"price": "20002"},{"id": "10003" ,"price": "20003"}]
+ 
+  //   //Add one instance into object
+  //   this.myCartKey = Object.keys(this.myCart)
+  //   this.myCartValue = Object.values(this.myCart)
+  
+  //   window.alert(this.myCart)
+  //   window.alert(this.myCartKey[1])
+  //   window.alert(this.myCartValue)
+  //   window.alert(this.myCartKey.length)
+  // }
+
 
   // onAddToCart() {
   //   window.alert("Check Point 01")
@@ -164,28 +222,41 @@ export class AppComponent {
   // }
 
 
-  onAddToCart() {
-    // window.alert("Check Point 01")
-    for (const i in this.product) {
-      if (this.product[i].selected === true){
-        for (const j in this.myCart) {
+  // onAddToCart() {
+  //   // window.alert("Check Point 01")
+  //   for (const i in this.product) {
+  //     if (this.product[i].selected === true){
+  //       for (const j in this.myCart) {
           
-          this.myCart[j].id = this.product[i].id
-          this.myCart[j].price = this.product[i].price
-          this.myCart[j].desc = this.product[i].desc
-          this.myCart[j].imgFile = this.product[i].imgFile
-          this.myCart[j].qty = this.product[i].qty
-          this.myCart[j].subtotal = this.product[i].subtotal
-          this.myCart[j].selected = this.product[i].selected
-          this.myCart[j].hidden = this.product[i].hidden
+  //         this.myCart[j].id = this.product[i].id
+  //         this.myCart[j].price = this.product[i].price
+  //         this.myCart[j].desc = this.product[i].desc
+  //         this.myCart[j].imgFile = this.product[i].imgFile
+  //         this.myCart[j].qty = this.product[i].qty
+  //         this.myCart[j].subtotal = this.product[i].subtotal
+  //         this.myCart[j].selected = this.product[i].selected
+  //         this.myCart[j].hidden = this.product[i].hidden
           
-          // this.myCartList = Object.keys(this.myCart)
-          window.alert(i)
-          window.alert(j)
-        }
-      }
-    }
-  }
+  //         // this.myCartList = Object.keys(this.myCart)
+  //         window.alert(i)
+  //         window.alert(j)
+  //       }
+  //     }
+  //   }
+  // }
+
+  // onAddToCart() {
+  //   const myCartKeyVar = Object.keys(this.myCart)
+  //   const myCartValueVar = Object.values(this.myCart)
+
+  
+  //   this.myCart[`task ${myCartKeyVar.length + 1}`] = this.product[4].id
+  //   this.myCartKey = Object.keys(this.myCart)
+  //   this.myCartValue = Object.values(this.myCart)
+
+  //   window.alert(this.myCartKey)
+  //   window.alert(this.myCartValue)
+  // }
 
   // onAddToCart() {
     

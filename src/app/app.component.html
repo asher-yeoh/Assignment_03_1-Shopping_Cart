@@ -19,7 +19,7 @@
       <div class="col" *ngIf="productListShow">
         <div class="list-title">Product List</div>
         <div *ngIf="product.length !== 0">
-          <div class="list" *ngFor="let itemProduct of product; let i = index" [style.background-color]="checkSelected(i)">
+          <div class="list" *ngFor="let itemProduct of product; let i = index" [style.background-color]="checkSelected(i)" [style.display]="checkHidden(i)">
             <tr>
               <td id="img-col">
                 <tr>
